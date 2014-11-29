@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    {% include 'libs.html' %}
+    <title></title>
+</head>
+<body>
+
+
+{% include 'navbar.html' %}
+
+
+<div class="content return-content" >
+    <br><br><br><br><br><br>
+<form class="form-horizontal" style="margin-left: 150px; margin-right: 150px;">
+    <fieldset>
+        <legend>Registrar dispositivo</legend>
+        <div class="form-group">
+            <label for="inputDevice" class="col-lg-2 control-label">Codigo</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputDevice" placeholder="Codigo de dispositivo">
+            </div>
+        </div>
+
+    </fieldset>
+</form>
+
+</div>
+
+
+
+</body>
+
+<script>
+    $(function () {
+        $.material.init();
+    });
+
+    $( "a" ).click(function() {
+        $('.modal-open-menu').toggleClass('modal-visible');
+        $(".doc-nav-active").toggleClass("doc-nav-active");
+        $(this).closest("li").toggleClass("doc-nav-active");
+        $('body').toggleClass('doc-nav-shown');
+        $('.content').toggleClass('return-content');
+    });
+
+    $("#toggleMenu").on("click", function(){
+        $('.modal-open-menu').toggleClass('modal-visible');
+        $('body').toggleClass('doc-nav-shown');
+        $('.content').toggleClass('return-content');
+    });
+
+    $(".modal-open-menu").on("click", function(){
+        $('.modal-open-menu').toggleClass('modal-visible');
+        $('body').toggleClass('doc-nav-shown');
+        $('.content').toggleClass('return-content');
+    });
+</script>
+</html>

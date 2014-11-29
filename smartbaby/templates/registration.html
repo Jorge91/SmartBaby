@@ -1,0 +1,56 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>SmartBaby login</title>
+    {% include 'libs.html' %}
+    <link href="{% static "css/login.css" %}" rel="stylesheet">
+    <script src="{% static "js/material-design/ripples.js" %} "></script>
+</head>
+<body>
+
+<div id="container">
+
+    <div class="well bs-component">
+        <form class="form-horizontal" method="post" action="{% url 'django.contrib.auth.views.login' %}">
+            {% csrf_token %}
+            <fieldset>
+                <legend id="legend_login_id">SmartBaby administration login:</legend>
+                <div class="form-group">
+                    <label for="inputUser" class="col-lg-2 control-label">User</label>
+
+                    <div class="col-lg-10">
+                        <input type="text" name="username" class="form-control" id="inputUser" placeholder="User">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+
+                    <div class="col-lg-10">
+                        <input type="password" name="password" class="form-control" id="inputPassword"
+                               placeholder="Password">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button id="submit_login_id" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+
+</div>
+
+<script>
+    $(function () {
+        $.material.init();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+@font-face {
+    font-family: Lobster;
+    src: url('/static/fonts/Lobster.ttf');
+}
+
+.header {
+    background: #008FA1;
+    height: 90px;
+    padding-left: 10%;
+    font-size: 50px;
+    color: white;
+    padding-top: 7px;
+    font-family: Lobster;
+}
+
+.doc-nav-shown .smartbaby-nav {
+    background-color: #00BCD4;
+    display: block;
+    width: 280px;
+    z-index: 3;
+}
+
+.doc-nav-shown .button-toogle-menu {
+    left: 290px;
+}
+
+.doc-nav-shown .content {
+    margin-left: 280px;
+}
+
+.content {
+    background: white;
+    height: 1000px;
+    overflow: auto;
+}
+
+.return-content {
+    -webkit-transition-duration: 0.7s;
+    transition-duration: 0.7s;
+}
+
+.smartbaby-nav {
+    bottom: 0;
+    height: 100%;
+    display: none;
+    overflow: scroll;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.smartbaby-nav li.doc-nav-active {
+    border-left: 4px solid #194E54;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.smartbaby-nav ul {
+    padding-top: 10px;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.smartbaby-nav li {
+    list-style-type: none;
+    padding-right: 20px;
+}
+
+.smartbaby-nav li a {
+    color: white;
+    display: block;
+    font-size: 16px;
+    padding: 0 0 0 20px;
+    height: 40px;
+    line-height: 40px;
+    font-weight: 400;
+}
+
+.smartbaby-nav > ul > hr {
+    width: 50%;
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+.button-toogle-menu {
+    background: white;
+    border-radius: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    z-index: 1;
+}
+
+.btn-warning:not(.btn-link):not(.btn-flat) {
+    background-color: #194E54;
+}
+
+.modal-open-menu.modal-visible {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition-delay: 0;
+    -moz-transition-delay: 0;
+    transition-delay: 0;
+}
+
+.modal-open-menu {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    left: 0;
+    opacity: 0.1;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+    z-index: 2;
+    position: fixed;
+    -webkit-transition: visibility 0 linear 0.4s, opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -moz-transition: visibility 0 linear 0.4s, opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: visibility 0 linear 0.4s, opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}

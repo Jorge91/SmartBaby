@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    {% include 'libs.html' %}
+    <title></title>
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+<div class="content return-content" >
+<br><br><br>
+    <h1 style="margin-left: 100px;">Últimas partidas</h1>
+<br><br>
+<div style="margin-left: 150px; margin-right: 150px;" class="list-group">
+{% for partida in ultimas_partidas %}
+    <div class="list-group-item">
+        <div class="row-action-primary">
+            <i class="mdi-hardware-gamepad"></i>
+        </div>
+        <div class="row-content">
+            <div class="action-secondary"><i class="mdi-material-info"></i></div>
+            <h4 class="list-group-item-heading">Partida {{ partida.date }}</h4>
+            <p class="list-group-item-text">{{ partida.aciertos }} aciertos </p>
+            <p class="list-group-item-text">Velocidad de respuesta media: {{ partida.velocidad_media }} segundos</p>
+        </div>
+    </div>
+    <div class="list-group-separator"></div>
+
+{% endfor %}
+
+</div>
+
+
+
+</div>
+
+
+</body>
+
+<script>
+    $(function() {
+        $.material.init();
+    });
+
+    $( "a" ).click(function() {
+        $('.modal-open-menu').toggleClass('modal-visible');
+        $(".doc-nav-active").toggleClass("doc-nav-active");
+        $(this).closest("li").toggleClass("doc-nav-active");
+        $('body').toggleClass('doc-nav-shown');
+        $('.content').toggleClass('return-content');
+    });
+
+    $("#toggleMenu").on("click", function(){
+        $('.modal-open-menu').toggleClass('modal-visible');
+        $('body').toggleClass('doc-nav-shown');
+        $('.content').toggleClass('return-content');
+    });
+
+    $(".modal-open-menu").on("click", function(){
+        $('.modal-open-menu').toggleClass('modal-visible');
+        $('body').toggleClass('doc-nav-shown');
+        $('.content').toggleClass('return-content');
+    });
+</script>
+
+
+</html>

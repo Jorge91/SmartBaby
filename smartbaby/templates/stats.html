@@ -1,0 +1,90 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    {% include 'libs.html' %}
+    <link href="{% static "css/stats.css" %}" rel="stylesheet">
+    <title></title>
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+<div class="content return-content" >
+<br><br>
+    <h1 style="text-align: center">Estadísticas </h1>
+<br>
+
+
+<div id="center" style="text-align: center">
+
+    <div class="well" style="display: inline-block">
+        <h3 id="total_partidas"></h3>
+        <h4>partidas jugadas</h4>
+    </div>
+    <div class="well" style="display: inline-block">
+        <h3 id="respuestas_acertadas"></h3>
+        <h4>respuestas acertadas</h4>
+    </div>
+    <div class="well" style="display: inline-block">
+        <h3 id="partidas_aprobadas"></h3>
+        <h4>partidas aprobadas</h4>
+    </div>
+    <div class="well" style="display: inline-block">
+        <h3 id="velocidad_media">{{ velocidad_media }}</h3>
+        <h4>segundos de media por respuesta</h4>
+    </div>
+
+
+    <div id="chart">
+  <ul id="numbers">
+    <li><span>100%</span></li>
+    <li><span>90%</span></li>
+    <li><span>80%</span></li>
+    <li><span>70%</span></li>
+    <li><span>60%</span></li>
+    <li><span>50%</span></li>
+    <li><span>40%</span></li>
+    <li><span>30%</span></li>
+    <li><span>20%</span></li>
+    <li><span>10%</span></li>
+    <li><span>0%</span></li>
+  </ul>
+
+  <ul id="bars">
+    <li><div data-percentage="{{ velocidad_media100 }}" class="bar"></div><span>Velocidad media</span></li>
+    <li><div data-percentage="77" class="bar"></div><span>Velocidad media global</span></li>
+    <li><div data-percentage="0" class="bar"></div><span></span></li>
+    <li><div data-percentage="{{ pct_aciertos }}" class="bar"></div><span>% Aciertos</span></li>
+    <li><div data-percentage="44" class="bar"></div><span>% Aciertos global</span></li>
+    </li>
+  </ul>
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</body>
+
+<script>
+    var $total_partidas = {{ total_partidas }} + 1;
+    var total_partidas_paint = 0;
+
+    var $respuestas_acertadas = {{ respuestas_acertadas }} + 1;
+    var respuestas_acertadas_paint = 0;
+
+    var $partidas_aprobadas = {{ partidas_aprobadas }} + 1;
+    var partidas_aprobadas_paint = 0;
+</script>
+
+<script src="{% static "js/stats.js" %} "></script>
+
+
+
+</html>

@@ -1,0 +1,19 @@
+body {
+    background-color: #008FA1;
+}
+
+
+#container {
+    width: 600px;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#legend_login_id {
+    color: #00BCD4;
+}
+
+#submit_login_id {
+    background-color: #194E54;
+}
